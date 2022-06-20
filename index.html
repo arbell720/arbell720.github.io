@@ -11,8 +11,53 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
 </head>
 <body>
+
+<h1>Project to lower alcohol consumption at two high schools</h1>
+
+<p>The goal of this exercise is to use a series of visualizations to find if data collected from two Italian high schools could lead to any strategies to lower alcohol consumption by students.</p>
+
+<p>Data was collected from about 400 students and includes data that might affect the level of alcohol consumption.</p>
+
+<p>Data is from Kaggle and is located at: https://www.kaggle.com/datasets/uciml/student-alcohol-consumption</p>
+
+<h2>Looking at correlation between various factors and weekday alcohol consumption by rank</h2>
+
+<p>In this visualization, various factors can be selected and the effect they have on weekday alcohol consumptions can be seen. There are two selections. 
+The first selection controls the factor on the y axis and contols the location of the points. The second selection controls the color of the points. 
+Using both selectors allows the user to see the effect of two different factors on weekday alcohol consumption. 
+The x axis represents all the students ranked by weekday alcohol consumption. Those consuming more alcohol have a higher rank and are on the right side of the graph.</p>
+
   <div id="vis"></div>
+
+<h2>Looking at correlation between various factors and weekend alcohol consumption by rank</h2>
+
+<p>In this visualization, various factors can be selected and the effect they have on weekend alcohol consumptions can be seen.  There are two selections.  
+The first selection controls the factor on the y axis and contols the location of the points.  The second selection controls the color of the points.  
+Using both selectors allows the user to see the effect of two different factors on weekend alcohol consumption.  
+ The x axis represents all the students ranked by weekday alcohol consumption.  Those consuming more alcohol have a higher rank and are on the right side of the graph.</p>
+
   <div id="vis2"></div>
+
+<h2>Looking at correlation between various factors and weekday alcohol consumption by value</h2>
+
+<p>In this visualization, various factors can be selected and the effect they have on weekday alcohol consumptions can be seen. 
+There is one selector where one factor can be selected and the effect of that factor on weekday alcohol consumption can be seen. 
+This chart differs from the one above related to ranking students by weekday alcohol consumption as students are no longer ranked. 
+In this case, the circles are larger at points where more students are represented. 
+For instance if 200 of 400 students fall into a particular point that circle would be very large.</p>
+
+  <div id="vis3"></div>
+
+<h2>Looking at correlation between various factors and weekend alcohol consumption by value</h2>
+
+<p>In this visualization, various factors can be selected and the effect they have on weekend alcohol consumptions can be seen.  
+There is one selector where one factor can be selected and the effect of that factor on weekend alcohol consumption can be seen.  
+This chart differs from the one above related to ranking students by weekend alcohol consumption as students are no longer ranked.  
+In this case, the circles are larger at points where more students are represented. 
+For instance if 200 of 400 students fall into a particular point that circle would be very large.</p>
+
+  <div id="vis4"></div>
+
 <script type="text/javascript">
   var spec = "weekdayConsumptionRanked.json";
   vegaEmbed('#vis', spec).then(function(result) {
@@ -22,6 +67,15 @@
   vegaEmbed('#vis2', spec2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
+ var spec3 = "weekdayConsumptionValues.json";
+  vegaEmbed('#vis3', spec3).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+ var spec4 = "weekendConsumptionValues.json";
+  vegaEmbed('#vis4', spec4).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
 </script>
 </body>
 </html>
